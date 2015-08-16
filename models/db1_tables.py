@@ -29,6 +29,7 @@ db.define_table('pick',
                 Field('pick_num', type='integer'),
                 Field('pick_round', type='integer'),
                 Field('pick_team', 'reference team'),
+                Field('pick_owner', 'reference team'),
                 Field('pick_player', 'reference player')
                 )
 db.pick.pick_num.writable = False

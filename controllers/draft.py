@@ -30,7 +30,7 @@ def generate_picks():
 def manage_draft():
     #picks = db(db.pick).select(orderby=db.pick.id)
 
-    fields = [db.pick.id, db.pick.pick_num, db.pick.pick_round, db.pick.pick_team, db.pick.pick_player, 
+    fields = [db.pick.id, db.pick.pick_num, db.pick.pick_round, db.pick.pick_team, db.pick.pick_owner, db.pick.pick_player, 
               db.player.player_first_name, db.player.player_last_name, db.player.player_position, db.player.player_pro_team]
     picks = db(db.pick).select(*fields, left=[db.player.on(db.pick.pick_player == db.player.id)])
 

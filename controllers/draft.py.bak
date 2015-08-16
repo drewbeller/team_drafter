@@ -49,7 +49,7 @@ def manage_draft():
         pick_time = 90
     else:
         pick_time = 30
-    print rounds
+    
     return dict(picks=picks, teams=teams, rounds=rounds, form=form, pick_time=pick_time)
 
 def trade_pick():

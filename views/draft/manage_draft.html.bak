@@ -4,6 +4,20 @@ table.teamdrafter, th.teamdrafter, td.teamdrafter {
    border: 1px solid black;
     text-align: center;
 }
+.T1 {
+    background: white;
+}
+.T2 {
+    background: aqua;
+}
+.T3 {background: red;}
+.T4 {background: chartreuse;}
+.T5 {background: gold;}
+.T6 {background: greenyellow;}
+.T7 {background: khaki;}
+.T8 {background: lightcyan;}
+.T9 {background: lightpink;}
+.T10 {background: orange;}
 </style>
 <!-- http://www.gieson.com/Library/projects/utilities/countdown/ , another option: http://flipclockjs.com/ -->
 <script src="../static/countdown_v4.8/countdown.js"></script>
@@ -67,15 +81,17 @@ table.teamdrafter, th.teamdrafter, td.teamdrafter {
             {{for team in teams:}}
             <td class="teamdrafter">
                 <div>
-{{for pick in picks:}}
-    {{if pick.pick.pick_round == round_num and pick.pick.pick_team == team:}}
-        {{if pick.player.player_last_name is not None:}}
-            {{="%s, %s (%s, %s)" % (pick.player.player_last_name, pick.player.player_first_name, pick.player.player_position, pick.player.player_pro_team)}}
-        {{else:}}
-            {{=pick.pick.pick_num}}
-        {{pass}}
-    {{pass}}
-{{pass}}
+                    {{for pick in picks:}}
+                        {{if pick.pick.pick_round == round_num and pick.pick.pick_team == team:}}
+                            <span class="T{{=pick.pick.pick_owner}}">
+                            {{if pick.player.player_last_name is not None:}}
+                                {{="%s, %s (%s, %s)" % (pick.player.player_last_name, pick.player.player_first_name, pick.player.player_position, pick.player.player_pro_team)}}
+                            {{else:}}
+                                {{="%s, %s" % (pick.pick.pick_num, pick.pick.pick_owner.team_name)}}
+                            {{pass}}
+                            </span>
+                        {{pass}}
+                    {{pass}}
                 </div>
             </td>
             {{pass}}

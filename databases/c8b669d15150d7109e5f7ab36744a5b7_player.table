@@ -45,7 +45,7 @@ sS'type'
 p20
 S'string'
 p21
-ssS'player_position'
+ssS'player_last_name'
 p22
 (dp23
 g4
@@ -53,7 +53,7 @@ I512
 sg5
 I00
 sg6
-I5
+I3
 sg7
 S'CHAR(512)'
 p24
@@ -109,7 +109,7 @@ sg9
 I00
 sg10
 g11
-ssS'player_last_name'
+ssS'player_position'
 p34
 (dp35
 g4
@@ -117,7 +117,7 @@ I512
 sg5
 I00
 sg6
-I3
+I5
 sg7
 S'CHAR(512)'
 p36

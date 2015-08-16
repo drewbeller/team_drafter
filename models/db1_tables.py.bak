@@ -34,8 +34,8 @@ db.define_table('pick',
 db.pick.pick_num.writable = False
 db.pick.pick_round.writable = False
 db.pick.pick_team.writable = False
-db.pick.pick_player.widget = SQLFORM.widgets.autocomplete(
-     request, db.player.player_description, id_field=db.player.id)
+#db.pick.pick_player.widget = SQLFORM.widgets.autocomplete(
+#     request, db.player.player_description, id_field=db.player.id)
 
 db.define_table('draft_parameter',
                 Field('draft_parameter'),
